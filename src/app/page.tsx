@@ -1,13 +1,10 @@
-import { HelloUniverseLabel } from "@/components/hello-universe-label";
+import Link from "next/link";
 
-export default function Home() {
+export default function Page() {
   return (
-    <main>
-      <div className="flex h-screen items-center justify-center">
-        <div className="flex flex-col items-center">
-          <HelloUniverseLabel />
-        </div>
-      </div>
-    </main>
+    <div>
+      <h1>Home</h1>
+      <Link href="/about">About</Link>
+    </div>
   );
 }
