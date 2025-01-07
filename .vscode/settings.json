@@ -6,7 +6,7 @@
   "[prisma]": {
     "editor.defaultFormatter": "Prisma.prisma"
   },
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   "editor.rulers": [200],
   "editor.tabSize": 2,
   "editor.quickSuggestions": {

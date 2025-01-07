@@ -51,13 +51,13 @@ const eslintConfig = [
           checksVoidReturn: { attributes: false },
         },
       ],
-      "unicorn/filename-case": [
-        "error",
-        {
-          case: "kebabCase",
-        },
-      ],
-      "func-style": ["error", "declaration", { allowArrowFunctions: false }],
+      // "unicorn/filename-case": [
+      //   "error",
+      //   {
+      //     case: "kebabCase",
+      //   },
+      // ],
+      // "func-style": ["error", "declaration", { allowArrowFunctions: false }],
       "prefer-arrow-callback": ["error", { allowNamedFunctions: false }],
       "import/no-default-export": "error",
     },

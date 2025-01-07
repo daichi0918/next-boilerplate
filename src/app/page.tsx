@@ -1,10 +1,7 @@
-import Link from "next/link";
+import { TodoListTemplate } from "../components/templates/TodoList";
 
-export default function Page() {
-  return (
-    <div>
-      <h1>Home</h1>
-      <Link href="/about">About</Link>
-    </div>
-  );
+function App() {
+  return <TodoListTemplate />;
 }
+
+export default App;
