@@ -29,9 +29,9 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "next.config.ts",
-    "src/components/templates/TodoList/index.jsx",
-    "src/components/templates/TodoList/index.test.jsx",
-    "src/hooks/useTodo.js"
+    "src/components/templates/TodoList/index.tsx",
+    "src/components/templates/TodoList/index.test.tsx",
+    "src/hooks/useTodo.ts"
   ],
   "exclude": ["node_modules", "dist"]
 }
