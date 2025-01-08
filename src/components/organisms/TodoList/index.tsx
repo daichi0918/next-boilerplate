@@ -16,7 +16,6 @@ type Props = {
   handleDeleteTodo: (id: number, title: string) => void;
 };
 export const TodoList = memo((props: Props) => {
-  console.log("test");
   const { todoList, handleDeleteTodo } = props;
   return (
     <ul className={styles.list}>
