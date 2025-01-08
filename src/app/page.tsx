@@ -1,7 +1,7 @@
-import { TodoListTemplate } from "../components/templates/TodoList";
+import { TodoTemplate } from "../components/templates/Todo";
 
 function App() {
-  return <TodoListTemplate />;
+  return <TodoTemplate />;
 }
 
 export default App;

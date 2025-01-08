@@ -60,6 +60,8 @@ const eslintConfig = [
       // "func-style": ["error", "declaration", { allowArrowFunctions: false }],
       "prefer-arrow-callback": ["error", { allowNamedFunctions: false }],
       "import/no-default-export": "error",
+
+      "react/display-name": "off",
     },
   },
   {

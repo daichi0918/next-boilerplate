@@ -1,20 +1,21 @@
 "use client";
 
 /**
- * TodoListTemplate
+ * TodoTemplate
  *
  * @package templates
  */
-import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { InputForm } from "@/components/atoms/InputForm";
+import { TodoList } from "@/components/organisms/TodoList";
 
 import { useTodo } from "../../../hooks/useTodo";
 import styles from "./styles.module.css";
 
 /**
  * TodoListTemplate
+ * @returns {JSX.Element}
  */
-export const TodoListTemplate = () => {
+export const TodoTemplate = () => {
   const {
     addInputValue,
     searchKeyWord,
@@ -31,9 +32,7 @@ export const TodoListTemplate = () => {
       <h1 className={styles.title}>Todo List</h1>
       <section className={styles.common}>
         <h2 className={styles.subtitle}>ADD TODO</h2>
-        <input
-          className={styles.input}
-          type={"text"}
+        <InputForm
           placeholder={"New Todo"}
           value={addInputValue}
           onChange={handleAddInputTitleChange}
@@ -41,30 +40,18 @@ export const TodoListTemplate = () => {
         />
       </section>
       <section className={styles.common}>
-        <input
-          className={styles.input}
-          type={"text"}
-          placeholder={"Search KeyWord"}
+        <InputForm
+          placeholder={"Search Keyword"}
           value={searchKeyWord}
           onChange={handleSearchKeyWordChange}
         />
       </section>
       <section className={styles.common}>
         {showTodoList.length > 0 && (
-          <ul className={styles.list}>
-            {showTodoList.map((todo) => (
-              <li key={todo.id} className={styles.item}>
-                <span className={styles.task}>{todo.title}</span>
-                <div className={styles.icon}>
-                  <FontAwesomeIcon
-                    icon={faTrashAlt}
-                    size="lg"
-                    onClick={() => handleDeleteTodo(todo.id, todo.title)}
-                  />
-                </div>
-              </li>
-            ))}
-          </ul>
+          <TodoList
+            todoList={showTodoList}
+            handleDeleteTodo={handleDeleteTodo}
+          />
         )}
       </section>
     </div>

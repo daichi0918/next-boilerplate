@@ -8,11 +8,11 @@ describe("useTodo, Hooksテスト", () => {
     test("【正常系】addInputValueを更新できること", () => {
       const expectValue = "テスト";
 
-      const eventObject = {
-        target: {
-          value: expectValue,
-        },
-      };
+      // const eventObject = {
+      //   target: {
+      //     value: expectValue,
+      //   },
+      // };
 
       // モックのChangeEventオブジェクトを作成
       const mockChangeEvent = {

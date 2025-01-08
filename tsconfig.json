@@ -15,8 +15,13 @@
     "outDir": "dist",
     "module": "ESNext",
     "moduleResolution": "Bundler",
+    // "jsx": "preserve",
     "jsx": "preserve",
-    "plugins": [{ "name": "next" }],
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
     "incremental": true,
     "baseUrl": ".",
     "paths": {
@@ -29,8 +34,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "next.config.ts",
-    "src/components/templates/TodoList/index.tsx",
-    "src/components/templates/TodoList/index.test.tsx",
+    "src/components/templates/Todo/index.tsx",
+    "src/components/templates/Todo/index.test.tsx",
     "src/hooks/useTodo.ts"
   ],
   "exclude": ["node_modules", "dist"]

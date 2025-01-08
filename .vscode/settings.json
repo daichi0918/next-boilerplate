@@ -22,6 +22,7 @@
   ],
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.tsdk": "next-boilerplate/node_modules/typescript/lib",
   "css.lint.unknownAtRules": "ignore",
   "redhat.telemetry.enabled": false,
   "explorer.fileNesting.enabled": true,
