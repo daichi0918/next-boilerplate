@@ -36,7 +36,8 @@
     "next.config.ts",
     "src/components/templates/Todo/index.tsx",
     "src/components/templates/Todo/index.test.tsx",
-    "src/hooks/useTodo.ts"
+    "src/hooks/useTodo.ts",
+    ".storybook/**/*.ts"
   ],
   "exclude": ["node_modules", "dist"]
 }

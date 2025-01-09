@@ -16,6 +16,12 @@ const compat = new FlatCompat({
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
   {
+    files: ["src/stories/**/*.stories.ts", "**/.storybook/*.ts"],
+    rules: {
+      "import/no-default-export": "off",
+    },
+  },
+  {
     files: ["**/*.ts", "**/*.tsx"],
     plugins: {
       "@typescript-eslint": typescript,
@@ -59,7 +65,7 @@ const eslintConfig = [
       // ],
       // "func-style": ["error", "declaration", { allowArrowFunctions: false }],
       "prefer-arrow-callback": ["error", { allowNamedFunctions: false }],
-      "import/no-default-export": "error",
+      // "import/no-default-export": "error",
 
       "react/display-name": "off",
     },
