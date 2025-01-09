@@ -16,7 +16,13 @@ type Props = JSX.IntrinsicElements["input"];
  * @returns {JSX.Element}
  */
 export const InputForm = memo((props: Props) => {
-  const { placeholder = "", value, onChange, readOnly = false } = props;
+  const {
+    placeholder = "",
+    value,
+    onChange,
+    onKeyDown,
+    readOnly = false,
+  } = props;
   return (
     <input
       type={"text"}
@@ -25,6 +31,7 @@ export const InputForm = memo((props: Props) => {
       value={value}
       onChange={onChange}
       readOnly={readOnly}
+      onKeyDown={onKeyDown}
     />
   );
 });
