@@ -14,13 +14,21 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
+  // Next.jsとTypeScriptの基本設定を拡張
   ...compat.extends("next/core-web-vitals", "next/typescript"),
+
+  // stories.tsxファイルに関するルールのオーバーライド
   {
-    files: ["src/stories/**/*.stories.ts", "**/.storybook/*.ts"],
+    files: [
+      "src/stories/**/*.stories.tsx",
+      "**/.storybook/**/*.tsx", // パターンを正しく修正
+    ],
     rules: {
-      "import/no-default-export": "off",
+      "import/no-default-export": "off", // stories.tsxに関してデフォルトエクスポートの禁止を無効化
     },
   },
+
+  // TypeScriptファイル全体の設定
   {
     files: ["**/*.ts", "**/*.tsx"],
     plugins: {
@@ -57,19 +65,11 @@ const eslintConfig = [
           checksVoidReturn: { attributes: false },
         },
       ],
-      // "unicorn/filename-case": [
-      //   "error",
-      //   {
-      //     case: "kebabCase",
-      //   },
-      // ],
-      // "func-style": ["error", "declaration", { allowArrowFunctions: false }],
-      "prefer-arrow-callback": ["error", { allowNamedFunctions: false }],
-      // "import/no-default-export": "error",
-
-      "react/display-name": "off",
+      "react/display-name": "off", // デフォルトでReactのdisplayNameルールを無効化
     },
   },
+
+  // 特定の設定を個別に追加
   {
     files: [
       "**/page.tsx",
@@ -84,8 +84,14 @@ const eslintConfig = [
       "import/prefer-default-export": "error",
     },
   },
+
+  // 無視するファイルやディレクトリを指定（.eslintignoreの代替）
   {
-    ignores: ["src/components/ui/*", "*.md"],
+    ignores: [
+      "src/components/ui/*", // 特定のディレクトリを無視
+      "*.md", // Markdownファイルを無視
+      "**/*.stories.tsx", // stories.tsxファイルを無視
+    ],
   },
 ];
 

@@ -8,24 +8,14 @@ export default {
   title: "Organisms/TodoList",
   tags: ["autodocs"],
   decorators: [
-    (Story: StoryFn) => <div style={{ padding: "5rem" }}>{Story()}</div>,
+    (Story: any) => (
+      <div style={{ padding: "5rem" }}>
+        {/* Story() 呼び出しの引数を渡す必要はなく、そのまま Story を使います */}
+        <Story todoList={FuncTodoList.args.todoList} />
+      </div>
+    ),
   ],
 };
-
-// export const Default = {
-//   args: {
-//     todoList: [
-//       {
-//         id: 1,
-//         title: "Todo 1",
-//       },
-//       {
-//         id: 2,
-//         title: "Todo 2",
-//       },
-//     ],
-//   },
-// };
 
 export const FuncTodoList = () => {
   // Todoリストの状態管理
@@ -39,6 +29,7 @@ export const FuncTodoList = () => {
       title: "Todo 2",
     },
   ]);
+
   // handleDeleteTodo を更新して新しいリストを状態に反映
   const handleDelete = (id: number, title: string) => {
     if (window.confirm(`${title}を本当に削除しますか?`)) {
@@ -46,7 +37,21 @@ export const FuncTodoList = () => {
       setTodoList(newTodoList); // リストを更新
     }
   };
+
   return <TodoList todoList={todoList} handleDeleteTodo={handleDelete} />;
 };
 
 FuncTodoList.storyName = "Default";
+
+FuncTodoList.args = {
+  todoList: [
+    {
+      id: 1,
+      title: "Todo 1",
+    },
+    {
+      id: 2,
+      title: "Todo 2",
+    },
+  ],
+};
