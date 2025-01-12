@@ -6,12 +6,12 @@ import { TodoList } from ".";
 export default {
   component: TodoList,
   title: "Organisms/TodoList",
-  tags: ["autodocs"],
+  // tags: ["autodocs"],
   decorators: [
     (Story: any) => (
       <div style={{ padding: "5rem" }}>
         {/* Story() 呼び出しの引数を渡す必要はなく、そのまま Story を使います */}
-        <Story todoList={FuncTodoList.args.todoList} />
+        {Story()}
       </div>
     ),
   ],
