@@ -9,7 +9,9 @@ import styles from "./styles.module.css";
  * @package atoms
  */
 
-type Props = JSX.IntrinsicElements["input"];
+type Props = {
+  additionalStyle?: React.CSSProperties;
+} & JSX.IntrinsicElements["input"];
 
 /**
  * @param {InputFormProps} props
@@ -22,6 +24,7 @@ export const InputForm = memo((props: Props) => {
     onChange,
     onKeyDown,
     readOnly = false,
+    additionalStyle,
   } = props;
   return (
     <input
@@ -32,6 +35,7 @@ export const InputForm = memo((props: Props) => {
       onChange={onChange}
       readOnly={readOnly}
       onKeyDown={onKeyDown}
+      style={additionalStyle}
     />
   );
 });
